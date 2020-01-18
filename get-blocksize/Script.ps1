@@ -4,8 +4,8 @@
       Param
       (
       [Parameter(Mandatory=$True)] 
-      [string]$volume,
-      [int]$sampleinterval,
+      [string]$volume, # volume name
+      [int]$sampleinterval, 
       [int]$maxsamples 
       )        
         $outfile = 'c:\scripts\blocksize.csv' 
