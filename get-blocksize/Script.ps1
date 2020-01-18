@@ -25,3 +25,7 @@
             }                    
                 $array | Export-Csv -Path $outfile -Delimiter "," -NoTypeInformation -Encoding UTF8 
 }
+
+        $perfomancesampledata1 = Get-Counter -Counter "\LogicalDisk(*)\Disk Bytes/sec", "\LogicalDisk(*)\Disk Transfers/sec" -SampleInterval $sampleinterval -MaxSamples $maxsamples        
+
+		
