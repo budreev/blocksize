@@ -23,9 +23,9 @@
     .PARAMETER Maxsamples
     Specifies the number of samples to get from each specified performance counter 
 
-
     .EXAMPLE
-    . .\get-blocksize.ps1 -volume "c" -sampleinterval 1 -maxsamples 20
+    . c:\scripts\get-blocksize.ps1
+	get-blocksize.ps1 -volume "c" -sampleinterval 1 -maxsamples 20
 
     .OUTPUT
     Outfile you can find in CSV format c:\scripts\blocksize.csv
