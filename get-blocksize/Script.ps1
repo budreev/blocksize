@@ -30,7 +30,7 @@
     .OUTPUT
     Outfile you can find in CSV format c:\scripts\blocksize.csv
       
-    timestamp	    iops	    latency	throughput(KBps)	throughput(MBps)	blocksize(kb)
+    timestamp	    iops	    latency(ms)	throughput(KBps)	throughput(MBps)	blocksize(kb)
     1/18/2020 20:40	18,573.50	1.69	74,292.20	        72.6	            4
     1/18/2020 20:40	19,830.90	1.54	79,334.20	        77.5	            4
     1/18/2020 20:40	16,798.70	1.6	    67,254.50	        65.7	            4
@@ -47,7 +47,7 @@ function get-blocksize
       Param
       (
       [Parameter(Mandatory=$True)] 
-      [string]$volume, # volume name
+      [string]$volume,
       [int]$sampleinterval, 
       [int]$maxsamples 
       )        
