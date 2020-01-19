@@ -9,7 +9,9 @@
     throughput(MBps)
     blocksize
 
-    Version 1.0, 2020-01-18
+	Version changes:
+    version 1.0, 2020-01-18
+	version 1.0.1 2020-01-19 added out-gridview
 
     .LINK  
     https://github.com/budreev/blocksize
@@ -66,8 +68,10 @@ function get-blocksize
                 $PerfomanceData | Add-Member -type NoteProperty -name 'throughput(KBps)' -Value ("{0:n1}" -f ($throughput.CookedValue / 1kb))
                 $PerfomanceData | Add-Member -type NoteProperty -name 'throughput(MBps)' -Value ("{0:n1}" -f ($throughput.CookedValue / 1mb))
                 $PerfomanceData | Add-Member -type NoteProperty -name 'blocksize(kb)' -Value ("{0:n1}" -f (($throughput.CookedValue / 1kb) / ($iops.CookedValue)))
-                $array+=$PerfomanceData                                       
+                $array+=$PerfomanceData 
+                                                      
             }                    
                 $array | Export-Csv -Path $outfile -Delimiter "," -NoTypeInformation -Encoding UTF8 
+                $array | Out-GridView
 }
 
